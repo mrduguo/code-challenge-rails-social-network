@@ -1,0 +1,12 @@
+default: &default
+  :url_shortener:
+    :url_template: https://is.gd/create.php?format=simple&url=LONG_URL
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
