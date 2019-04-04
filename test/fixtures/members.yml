@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: member1
   url_long: MyString
   url_short: MyString
 
 two:
-  name: MyString
+  name: member2
   url_long: MyString
   url_short: MyString
