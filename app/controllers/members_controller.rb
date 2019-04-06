@@ -26,7 +26,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     respond_to do |format|
-      if save_if_valid
+      if safe_save
         format.html {redirect_to @member, notice: 'Member was successfully created.'}
         format.json {render :show, status: :created, location: @member}
       else
@@ -41,7 +41,7 @@ class MembersController < ApplicationController
   def update
     @member.attributes = member_params
     respond_to do |format|
-      if save_if_valid
+      if safe_save
         format.html {redirect_to @member, notice: 'Member was successfully updated.'}
         format.json {render :show, status: :ok, location: @member}
       else
@@ -63,11 +63,11 @@ class MembersController < ApplicationController
 
   private
 
-  def save_if_valid
-    if @member.valid?
-      @member.url_short = UrlShortener.make_url_short(@member.url_long)
+  def safe_save
+    begin
       @member.save
-    else
+    rescue => e
+      logger.error ([e.message]+e.backtrace).join($/)
       false
     end
   end

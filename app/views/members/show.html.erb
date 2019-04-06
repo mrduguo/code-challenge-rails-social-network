@@ -10,5 +10,14 @@
   <%= render 'link_website', member: @member %>
 </p>
 
+<p>
+  <strong>About:</strong>
+  <ul>
+  <% @member.headings.each do |heading| %>
+      <li><%= heading.text %></li>
+  <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
