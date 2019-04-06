@@ -2,10 +2,10 @@
 
 one:
   name: member1
-  url_long: http://foo.bar/zoo?a=b
-  url_short: https://is.gd/5fcIAO
+  url_long: https://httpbin.org/
+  url_short: https://is.gd/jPwZG4
 
 two:
   name: member2
-  url_long: http://foo.bar/zoo?a=b
-  url_short: https://is.gd/5fcIAO
+  url_long: https://httpbin.org/
+  url_short: https://is.gd/jPwZG4
