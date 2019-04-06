@@ -25,14 +25,13 @@ class MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(member_params)
-
     respond_to do |format|
-      if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
-        format.json { render :show, status: :created, location: @member }
+      if save_if_valid
+        format.html {redirect_to @member, notice: 'Member was successfully created.'}
+        format.json {render :show, status: :created, location: @member}
       else
-        format.html { render :new }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        format.html {render :new}
+        format.json {render json: @member.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -40,13 +39,14 @@ class MembersController < ApplicationController
   # PATCH/PUT /members/1
   # PATCH/PUT /members/1.json
   def update
+    @member.attributes = member_params
     respond_to do |format|
-      if @member.update(member_params)
-        format.html { redirect_to @member, notice: 'Member was successfully updated.' }
-        format.json { render :show, status: :ok, location: @member }
+      if save_if_valid
+        format.html {redirect_to @member, notice: 'Member was successfully updated.'}
+        format.json {render :show, status: :ok, location: @member}
       else
-        format.html { render :edit }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @member.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -56,19 +56,29 @@ class MembersController < ApplicationController
   def destroy
     @member.destroy
     respond_to do |format|
-      format.html { redirect_to members_url, notice: 'Member was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to members_url, notice: 'Member was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_member
-      @member = Member.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def member_params
-      params.require(:member).permit(:name, :url_long, :url_short)
+  def save_if_valid
+    if @member.valid?
+      @member.url_short = UrlShortener.make_url_short(@member.url_long)
+      @member.save
+    else
+      false
     end
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_member
+    @member = Member.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def member_params
+    params.require(:member).permit(:name, :url_long)
+  end
 end

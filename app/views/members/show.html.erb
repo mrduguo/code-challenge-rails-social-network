@@ -6,13 +6,8 @@
 </p>
 
 <p>
-  <strong>Url long:</strong>
-  <%= @member.url_long %>
-</p>
-
-<p>
-  <strong>Url short:</strong>
-  <%= @member.url_short %>
+  <strong>Website:</strong>
+  <%= render 'link_website', member: @member %>
 </p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |

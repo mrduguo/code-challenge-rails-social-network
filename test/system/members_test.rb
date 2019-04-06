@@ -14,9 +14,8 @@ class MembersTest < ApplicationSystemTestCase
     visit members_url
     click_on "New Member"
 
-    fill_in "Name", with: @member.name
-    fill_in "Url long", with: @member.url_long
-    fill_in "Url short", with: @member.url_short
+    fill_in "Name", with: "#{@member.name}-MembersTest"
+    fill_in "Website", with: @member.url_long
     click_on "Create Member"
 
     assert_text "Member was successfully created"
@@ -27,9 +26,8 @@ class MembersTest < ApplicationSystemTestCase
     visit members_url
     click_on "Edit", match: :first
 
-    fill_in "Name", with: @member.name
-    fill_in "Url long", with: @member.url_long
-    fill_in "Url short", with: @member.url_short
+    fill_in "Name", with: "#{@member.name}-MembersTest"
+    fill_in "Website", with: @member.url_long
     click_on "Update Member"
 
     assert_text "Member was successfully updated"

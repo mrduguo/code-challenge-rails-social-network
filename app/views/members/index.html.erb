@@ -6,8 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Url long</th>
-      <th>Url short</th>
+      <th>Website</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +15,7 @@
     <% @members.each do |member| %>
       <tr>
         <td><%= member.name %></td>
-        <td><%= member.url_long %></td>
-        <td><%= member.url_short %></td>
+        <td><%= render 'link_website', member: member %></td>
         <td><%= link_to 'Show', member %></td>
         <td><%= link_to 'Edit', edit_member_path(member) %></td>
         <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
