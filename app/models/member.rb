@@ -12,6 +12,9 @@ class Member < ApplicationRecord
 
   has_many :headings, dependent: :delete_all, autosave: true
 
+  has_many :friends,  inverse_of: :member
+  has_many :friend_members, through: :friends, dependent: :destroy
+
   before_save :shorten_url
   after_save :populate_headings
 
@@ -37,5 +40,4 @@ class Member < ApplicationRecord
       raise e
     end
   end
-
 end

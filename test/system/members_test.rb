@@ -24,6 +24,7 @@ class MembersTest < ApplicationSystemTestCase
 
   test "updating a Member" do
     visit members_url
+    click_on "#{@member.name}"
     click_on "Edit", match: :first
 
     fill_in "Name", with: "#{@member.name}-MembersTest"
@@ -36,6 +37,7 @@ class MembersTest < ApplicationSystemTestCase
 
   test "destroying a Member" do
     visit members_url
+    click_on "#{@member.name}"
     page.accept_confirm do
       click_on "Destroy", match: :first
     end

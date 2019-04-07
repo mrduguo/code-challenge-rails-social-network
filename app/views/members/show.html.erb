@@ -1,3 +1,6 @@
+
+<h1>Member</h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -19,5 +22,11 @@
   </ul>
 </p>
 
+<p>
+  <strong>Friends:</strong>
+  <%= link_to @member.friends.size, member_friends_path(@member) %>
+</p>
+
 <%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Destroy', @member, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', members_path %>

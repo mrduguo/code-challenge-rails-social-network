@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_06_203733) do
+ActiveRecord::Schema.define(version: 2019_04_07_073015) do
+
+  create_table "friends", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "friend_member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_member_id"], name: "index_friends_on_friend_member_id"
+    t.index ["member_id"], name: "index_friends_on_member_id"
+  end
 
   create_table "headings", force: :cascade do |t|
     t.string "text"

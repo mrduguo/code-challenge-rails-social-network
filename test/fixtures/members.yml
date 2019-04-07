@@ -9,3 +9,14 @@ two:
   name: member2
   url_long: https://httpbin.org/
   url_short: https://is.gd/jPwZG4
+
+three:
+  name: member3
+  url_long: https://httpbin.org/
+  url_short: https://is.gd/jPwZG4
+
+
+four:
+  name: member4
+  url_long: https://httpbin.org/
+  url_short: https://is.gd/jPwZG4

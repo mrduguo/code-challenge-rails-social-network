@@ -2,8 +2,8 @@
 
 one:
   member: one
-  friend_member: one
+  friend_member: two
 
 two:
   member: two
-  friend_member: two
+  friend_member: one
