@@ -1,24 +1,40 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple social network to demo basic rails knowledge.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+This project is developed and tested in `MacOS`, it should work on `Linux` and may not work on `Windows` due to `sqlite3` dependencies.
 
-* System dependencies
+* Ruby version: `2.6.1`
 
-* Configuration
+## Development
 
-* Database creation
+To run the server locally with `development` mode:
 
-* Database initialization
+```
+ bundle install
+ bin/rails db:migrate
+ bin/rails server
+```
 
-* How to run the test suite
+Then you can access the server at http://0.0.0.0:3000/
 
-* Services (job queues, cache servers, search engines, etc.)
+## Test
+Run following command to execute tests
 
-* Deployment instructions
+```
+ bin/rails test
+```
 
-* ...
+## Production
+
+To run the standalone server with `production` mode locally:
+
+```
+ RAILS_ENV=production bin/rails db:migrate
+ RAILS_ENV=production bin/rails assets:precompile
+ RAILS_SERVE_STATIC_FILES=true RAILS_ENV=production bin/rails server
+```
+
+Then you can access the server at http://0.0.0.0:3000/
