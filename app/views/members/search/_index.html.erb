@@ -1,0 +1,35 @@
+<h1>Search <%= title %></h1>
+<%= render 'members/search/form', path: search_path, term: @term %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>About</th>
+      <% if member %>
+        <th>Friends Path</th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% headings_group.each do |friend, headings| %>
+      <tr>
+        <td><%= link_to friend.name, friend %></td>
+        <td>
+          <ul>
+            <% headings.each do |heading| %>
+              <li><%= heading.text %></li>
+            <% end %>
+          </ul>
+        </td>
+        <% if member %>
+          <td><%=friend_member_path(member,friend) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', back_path %>

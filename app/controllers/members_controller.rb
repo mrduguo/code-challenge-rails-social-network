@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :set_member, only: [:show, :edit, :update, :destroy]
+  before_action :set_member, only: [:show, :edit, :update, :destroy,:search_by_member]
 
   # GET /members
   # GET /members.json
@@ -59,6 +59,19 @@ class MembersController < ApplicationController
       format.html {redirect_to members_url, notice: 'Member was successfully destroyed.'}
       format.json {head :no_content}
     end
+  end
+
+  def search_all
+    @term=params.permit(:term)[:term]
+    @headings_group = Heading.where("text LIKE :term", {:term => "%#{@term}%"}).group_by(&:member)
+  end
+
+  def search_by_member
+    @term=params.permit(:term)[:term]
+    @headings_group = Heading.
+        where("member_id <> :member_id AND text LIKE :term",
+              {:member_id => @member.id,  :term => "%#{@term}%"}).
+        group_by(&:member)
   end
 
   private

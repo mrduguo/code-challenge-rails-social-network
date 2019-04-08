@@ -1,0 +1,7 @@
+<%= render 'members/search/index',
+           title: "Members for #{@member.name}",
+           search_path: search_member_path(@member),
+           back_path: member_path(@member),
+           headings_group: @headings_group,
+           member: @member,
+           term: @term %>
