@@ -17,6 +17,11 @@
         <td><%= render 'link_website', member: member %></td>
       </tr>
     <% end %>
+    <% if @members.empty? %>
+      <tr>
+        <td>No members found</td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

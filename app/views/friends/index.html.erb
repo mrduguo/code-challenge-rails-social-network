@@ -10,6 +10,11 @@
         <td><%= link_to 'Destroy', member_friend_path(friend.member,friend), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <% if @friends.empty? %>
+      <tr>
+        <td>No friends found</td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

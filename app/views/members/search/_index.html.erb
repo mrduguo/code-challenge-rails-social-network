@@ -27,6 +27,11 @@
         <% end %>
       </tr>
     <% end %>
+    <% if headings_group.empty? %>
+      <tr>
+        <td>No results found</td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
