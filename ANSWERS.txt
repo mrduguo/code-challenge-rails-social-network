@@ -1,0 +1,49 @@
+QUESTION 1
+=============================================================================
+> Briefly explain the GIL assuming you were addressing a non-technical
+>    audience. What are the potential cost implications of the GIL for
+>    scaling a production application?
+
+A Global Interpreter Lock (GIL) is a mechanism to ensure execute code
+    one at a time. It was used by popular programming language reference
+    implementation such as Ruby and Python.
+
+It's works like drive in a single lane, all cars use the road exclusively
+    at a given time. It's not a problem if for single lane road as of for
+    single core CPU. However for multi-lane such as high way, the mechanism
+    will restrict all traffic to single lane which is a great waist. As
+    modern computer processor has multiple core which is like multi lane
+    high way, software with GIL will not able take advantage of additional
+    computing power to do the work in parallel in production.
+
+To scale GIL application in production, team has to scale out horizontally
+    or use system level process fork to get around the restriction, which
+    add complexity and overhead to the solution.
+
+
+QUESTION 2
+=============================================================================
+> Also for a non-technical audience, explain how a background job
+>    queuing service could help when accessing external APIs.
+
+Let's use local and online shopping as an example to explain the problem. There
+    are lots of time consuming process in the whole shopping process:
+          * get to the shop
+          * find the right products with lucky
+          * wait to pay
+          * package and bring home
+
+By local shopping, you have to physically do all those in sequence. By using
+    online shopping, just a few click, you place the order and some time later,
+    it will arrive to your door steps without much hassle.
+
+External API is like expensive local shopping process, it could be slow and
+    unreliable. A background job queue is like online shopping order, it will
+    be looked after by the service provider and will get back to you when it
+    complete successfully or failed.
+
+A well designed queuing based service not only delivery superb user experience
+    like local VS online shopping, but also bring new business opportunities
+    to hide the complexity behind the scene and provide additional value added
+    service along the pipeline.
+
