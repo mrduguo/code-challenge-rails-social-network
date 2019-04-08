@@ -1,4 +1,4 @@
-# README
+# Sample Rails Social Network [![Build Status](https://travis-ci.org/mrduguo/code-challenge-rails-social-network.svg?branch=master)](https://travis-ci.org/mrduguo/code-challenge-rails-social-network)
 
 A simple social network to demo basic rails knowledge.
 
@@ -38,3 +38,10 @@ To run the standalone server with `production` mode locally:
 ```
 
 Then you can access the server at http://0.0.0.0:3000/
+
+
+## Live
+
+The app has been deployed to AWS Elastic Beanstalk via [travis-ci.org](https://travis-ci.org/mrduguo/code-challenge-rails-social-network) for demo purpose:
+
+http://ccrsn.eu-west-1.elasticbeanstalk.com
