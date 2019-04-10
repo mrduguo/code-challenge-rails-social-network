@@ -58,6 +58,7 @@ group :test do
   gem 'chromedriver-helper'
   gem "vcr", "~> 4.0"
   gem 'webmock'
+  gem "simplecov", "~> 0.16.1"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
