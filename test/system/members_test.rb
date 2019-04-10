@@ -11,28 +11,32 @@ class MembersTest < ApplicationSystemTestCase
   end
 
   test "creating a Member" do
-    visit members_url
-    click_on "New Member"
+    VCR.use_cassette("heading_with_httpbin_org") do
+      visit members_url
+      click_on "New Member"
 
-    fill_in "Name", with: "#{@member.name}-MembersTest"
-    fill_in "Website", with: @member.url_long
-    click_on "Create Member"
+      fill_in "Name", with: "#{@member.name}-MembersTest"
+      fill_in "Website", with: @member.url_long
+      click_on "Create Member"
 
-    assert_text "Member was successfully created"
-    click_on "Back"
+      assert_text "Member was successfully created"
+      click_on "Back"
+    end
   end
 
   test "updating a Member" do
-    visit members_url
-    click_on "#{@member.name}"
-    click_on "Edit", match: :first
+    VCR.use_cassette("heading_with_httpbin_org") do
+      visit members_url
+      click_on "#{@member.name}"
+      click_on "Edit", match: :first
 
-    fill_in "Name", with: "#{@member.name}-MembersTest"
-    fill_in "Website", with: @member.url_long
-    click_on "Update Member"
+      fill_in "Name", with: "#{@member.name}-MembersTest"
+      fill_in "Website", with: @member.url_long
+      click_on "Update Member"
 
-    assert_text "Member was successfully updated"
-    click_on "Back"
+      assert_text "Member was successfully updated"
+      click_on "Back"
+    end
   end
 
   test "destroying a Member" do

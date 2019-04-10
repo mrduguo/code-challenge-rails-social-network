@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://is.gd/create.php?format=simple&url=http://foo.bar/zoo?a=b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 10 Apr 2019 18:18:28 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=def1ab5633b91d2fb19403ea6ceeb2ab51554920308; expires=Thu, 09-Apr-20
+        18:18:28 GMT; path=/; domain=.is.gd; HttpOnly; Secure
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4c56b935e9c1299f-DUB
+    body:
+      encoding: ASCII-8BIT
+      string: https://is.gd/5fcIAO
+    http_version: 
+  recorded_at: Wed, 10 Apr 2019 18:18:28 GMT
+recorded_with: VCR 4.0.0

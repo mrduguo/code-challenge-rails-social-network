@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://is.gd/create.php?format=simple&url=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 10 Apr 2019 18:17:44 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd360f75a531a57ed589c12abcc0c65581554920264; expires=Thu, 09-Apr-20
+        18:17:44 GMT; path=/; domain=.is.gd; HttpOnly; Secure
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4c56b822d821a6cb-DUB
+    body:
+      encoding: UTF-8
+      string: 'Error: Please specify a URL to shorten.'
+    http_version: 
+  recorded_at: Wed, 10 Apr 2019 18:17:44 GMT
+recorded_with: VCR 4.0.0

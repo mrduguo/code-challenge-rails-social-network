@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://thepaciellogroup.github.io/AT-browser-tests/test-files/h1-h6.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Content-Type:
+      - text/html; charset=utf-8
+      Last-Modified:
+      - Fri, 01 Mar 2019 17:55:34 GMT
+      Etag:
+      - W/"5c797216-b5e"
+      Access-Control-Allow-Origin:
+      - "*"
+      Expires:
+      - Wed, 10 Apr 2019 18:31:01 GMT
+      Cache-Control:
+      - max-age=600
+      X-Github-Request-Id:
+      - 85A0:7C83:4C8DFA:656944:5CAE340B
+      Content-Length:
+      - '1002'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 10 Apr 2019 18:21:01 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-lhr6343-LHR
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1554920461.093741,VS0,VE91
+      Vary:
+      - Accept-Encoding
+      X-Fastly-Request-Id:
+      - 72a7c6a1643ebe7ae0852307694c7219478ff943
+    body:
+      encoding: ASCII-8BIT
+      string: "<!doctype html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<title>test
+        file: h1-h6 elements</title>\n\t\t<link rel=\"stylesheet\" href=\"../style/styles.css\">\n\t\t<meta
+        name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n\t</head>\n\t<body>\n\t\t<h1>\n\t\t\t<code>h1-h6</code>
+        elements\n\t\t</h1>\n\n\t\t<div class=\"meta\">\n\t\t\t<div class=\"criteria\">\n\t\t\t\t<h2>\n\t\t\t\t\tPass
+        Criteria\n\t\t\t\t</h2>\n\t\t\t\t<ul id=\"criteria-list\">\n\t\t\t\t\t<li
+        id=\"basic-criteria\">#1: Element is supported</li>\n\t\t\t\t\t<li>#2: Correct
+        HTML and Core Accessibility API mappings</li>\n\t\t\t\t\t<li>#3: Correct Accessible
+        Name &amp; Description Calculation</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\n\t\t\t<div
+        class=\"reference\">\n\t\t\t\t<h2>\n\t\t\t\t\tReference\n\t\t\t\t</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a
+        href=\"https://w3c.github.io/html/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements\">HTML5
+        <code>h1-h6</code> elements</a>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a
+        href=\"https://w3c.github.io/html-aam/#el-h1-h6\">HTML Accessibility API Mappings
+        for <code>h1-h6</code> elements</a>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a
+        href=\"https://www.w3.org/TR/core-aam-1.1/#role-map-heading\">Core Accessibility
+        API Mappings for <code>heading</code> role</a>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<a
+        href=\"https://www.w3.org/TR/core-aam-1.1/#ariaLevel\">Core Accessibility
+        API Mappings for <code>aria-level</code> property</a>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<div
+        class=\"test\">\n\t\t\t<h2 class=\"test-title\" id=\"hd-001\">\n\t\t\t\tTest
+        hd-001: <code>h1 - h6</code> elements\n\t\t\t</h2>\n\n\t\t\t<div class=\"test-case\">\n<h1
+        id=\"hd-01\">h1 heading</h1>\n<h2 id=\"hd-02\">h2 heading</h2>\n<h3 id=\"hd-03\">h3
+        heading</h3>\n<h4 id=\"hd-04\">h4 heading</h4>\n<h5 id=\"hd-05\">h5 heading</h5>\n<h6
+        id=\"hd-06\">h6 heading</h6>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<div class=\"test\">\n\t\t\t<h2
+        class=\"test-title\" id=\"hd-002\">\n\t\t\t\tTest hd-002: <code>span</code>
+        element,\n\t\t\t\twith <code>role=\"heading\"</code> &amp;\n\t\t\t\t<code>aria-level=\"1\"</code>\n\t\t\t</h2>\n\n\t\t\t<div
+        class=\"test-case\">\n<span role=\"heading\" aria-level=\"1\">\n\tHeading
+        Level 1?\n</span>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<div class=\"test\">\n\t\t\t<h2
+        class=\"test-title\" id=\"hd-003\">\n\t\t\t\tTest hd-003: <code>h2</code>
+        element,\n\t\t\t\twith <code>aria-level=\"1\"</code>\n\t\t\t</h2>\n\n\t\t\t<div
+        class=\"test-case\">\n<h2 aria-level=\"1\">\n\tHeading Level 1?\n</h2>\n\t\t\t</div>\n\t\t</div>\n
+        \       \n        <div class=\"test\">\n\t\t\t<h2 class=\"test-title\" id=\"hd-004\">\n\t\t\t\tTest
+        hd-004: <code>h1 - h6</code> elements with no content\n\t\t\t</h2>\n\n\t\t\t<div
+        class=\"test-case\">\n<h1 id=\"hda-01\"></h1>\n<h2 id=\"hda-02\"></h2>\n<h3
+        id=\"hda-03\"></h3>\n<h4 id=\"hda-04\"></h4>\n<h5 id=\"hda-05\"></h5>\n<h6
+        id=\"hda-06\"></h6>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<script src=\"../scripts/test-scripts.js\"></script>\n\t\t<script>\n\t\t\tvar
+        test = [];\n\t\t\tvar el = document.getElementById('hd-01');\n\t\t\tvar isSupported
+        = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));\n\n\t\t\ttest.push({id:
+        \"basic-criteria\", pass: isSupported});\n\t\t\tdisplaySupportResults(test);\n\t\t</script>\n\t</body>\n</html>\n"
+    http_version: 
+  recorded_at: Wed, 10 Apr 2019 18:21:01 GMT
+recorded_with: VCR 4.0.0

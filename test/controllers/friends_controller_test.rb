@@ -18,8 +18,7 @@ class FriendsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create friend" do
-    skip("TODO: fix later")
-    assert_difference('Friend.count') do
+    assert_difference('Friend.count', 2) do
       post member_friends_path(@member), params: { friend: { friend_name: @member4.name } }
     end
 
@@ -29,8 +28,7 @@ class FriendsControllerTest < ActionDispatch::IntegrationTest
 
 
   test "should destroy friend" do
-    skip("TODO: fix later")
-    assert_difference('Friend.count', -1) do
+    assert_difference('Friend.count', -2) do
       delete member_friend_path(@member, @friend)
     end
 
