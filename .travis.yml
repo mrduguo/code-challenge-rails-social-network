@@ -18,7 +18,7 @@ deploy:
   bucket_name: elasticbeanstalk-eu-west-1-261986573496
   bucket_path: ccrsn
   on:
-    branch: master
+    branch: aws-elastic-beanstalk
 env:
   global:
     secure: UvQXb+5iN5wQZyPkZiOd1vd+cOtErikOchCBDE2u3P0rgLonFzrP4BdNIjgZCyEkRsHTMN4oqFg6N395vch9Rgv7oe687P1ZGk8W/WlTBEQUT4luh8lCh/VfAjUU7m438vN2zz1Vf/3RXPvIbNXvY07YUYpyGe1+edF6yV+/km60n2pFz+ijYruV8ihXJ//UM6uj6ChkjrV0ML8WbobwPI7+1kbdsCI6DLTNv7lpv5XKczYRfN/02Hd5dpPZPXD7Rj8YqQw+3MCfoSArFxg7V81pdXdzaa8/XGNF0UXkDWql91zRPgMKWGnDNyF+o1z33iQf8jvzTJhCKwgOp1s5HtTtK1kzL9SEkt7v/p9bC0yo0LY0TEeQ4zLVIf1vmBdHqTWuEEOBwMHlesdZTapqFJhaVenH+7+678wpz8YmwMTDSJMR20wUvBJYrFrxFqPW2bIGNyYLtMcw0/VuvorKKG8EMrQEhWU4BH39d5s8Jz9ANCNTHvxr1JqZ5/fvQsPT4L6xWwMyyszUiYRyq85AIUknp1kda/OXttGLdGn9Hlm5fDexTd/tJNTm4psTNRiP8ME5NUcrsAnfHi9oM3eVw684ErwQJXYdP2PX9MvNII6+HXnPOXGbCoE0Bz/KFCPy7fYmT+J0tbJOWzvjsX9EBCbebXGNzsOensjTsYzYwOo=
